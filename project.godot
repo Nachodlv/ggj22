@@ -1,0 +1,52 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Reference",
+"class": "AK",
+"language": "GDScript",
+"path": "res://wwise/GeneratedSoundBanks/wwise_ids.gd"
+}, {
+"base": "Reference",
+"class": "AkUtils",
+"language": "GDScript",
+"path": "res://wwise/runtime/helpers/ak_utils.gd"
+} ]
+_global_script_class_icons={
+"AK": "",
+"AkUtils": ""
+}
+
+[application]
+
+config/name="GGJ22"
+config/icon="res://icon.png"
+
+[autoload]
+
+WwiseSettings="*res://wwise/wwise_settings.gd"
+Wwise="*res://wwise/bin/wwise-gdnative.gdns"
+Waapi="*res://wwise/bin/waapi-gdnative-debug.gdns"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/waapi_picker/plugin.cfg", "res://addons/wwise_build_export/plugin.cfg", "res://addons/wwise_custom_nodes/plugin.cfg", "res://addons/wwise_ids_converter/plugin.cfg" )
+
+[physics]
+
+common/enable_pause_aware_picking="true"
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"
+
+[wwise]
+
+common_user_settings/load_init_bank_at_startup=true
