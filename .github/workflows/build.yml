@@ -24,5 +24,6 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-artifact@v2
         with:
-          name: Client - ${{ matrix.platform }}
+          ACTIONS_STEP_DEBUG: true
+          name: Client ${{ matrix.platform }}
           path: ${{ github.workspace }}/${{ steps.build.outputs.build }}
